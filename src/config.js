@@ -5,4 +5,6 @@ export const config = {
   dockerNetwork: process.env.LCVA_DOCKER_NETWORK || 'bridge',
   containerMemory: process.env.LCVA_CONTAINER_MEMORY || '1g',
   containerCpus: Number(process.env.LCVA_CONTAINER_CPUS || 1),
+  adminUsername: process.env.LCVA_ADMIN_USERNAME || 'admin',
+  adminPassword: process.env.LCVA_ADMIN_PASSWORD || 'admin',
 };

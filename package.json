@@ -8,7 +8,7 @@
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "build:image": "docker build -t lcva/desktop:latest images/desktop",
-    "lint": "node --check src/server.js && node --check src/docker.js && node --check scripts/smoke.js",
+    "lint": "node --check src/server.js && node --check src/docker.js && node --check src/auth.js && node --check src/health.js && node --check src/state.js && node --check scripts/smoke.js",
     "smoke": "node scripts/smoke.js"
   },
   "dependencies": {},

@@ -143,3 +143,76 @@ iframe {
     flex-direction: column;
   }
 }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.form-grid label {
+  color: #c9d5f5;
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+input,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  color: #fff;
+  font: inherit;
+  padding: 0.85rem 1rem;
+}
+
+select option {
+  background: #111827;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat-card,
+.mini-stats {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.stat-card p {
+  color: #c9d5f5;
+  margin: 0.35rem 0;
+}
+
+.mini-stats {
+  color: #78ffc9;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.settings-grid {
+  align-items: end;
+}

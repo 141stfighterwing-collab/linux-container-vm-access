@@ -3,6 +3,9 @@ import { readFile } from 'node:fs/promises';
 const requiredFiles = [
   'src/server.js',
   'src/docker.js',
+  'src/auth.js',
+  'src/health.js',
+  'src/state.js',
   'public/index.html',
   'images/desktop/Dockerfile',
   'docs/ARCHITECTURE.md',

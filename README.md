@@ -7,6 +7,7 @@ A Linux-only, self-hosted starter repo for building a lightweight Kasm/Apache Gu
 ## What it does
 
 - Runs a host web server that waits for incoming browser connections.
+- Provides an admin login with settings, user, Linux host, VM, socket health, and app health panels.
 - Creates an ephemeral Linux desktop container when a user starts a session.
 - Exposes a browser-based VNC client through noVNC/websockify on a generated host port.
 - Publishes SSH and RDP ports for direct client connections.
@@ -53,7 +54,7 @@ Ephemeral desktop container
   `- OpenSSH :22
 ```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/ROADMAP.md](docs/ROADMAP.md) for implementation details and next steps.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/MANAGEMENT.md](docs/MANAGEMENT.md), and [docs/ROADMAP.md](docs/ROADMAP.md) for implementation details and next steps.
 
 ## Security notes
 

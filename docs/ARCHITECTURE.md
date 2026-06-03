@@ -6,7 +6,7 @@ Linux Container VM Access (LCVA) is designed as a small host service plus a reus
 
 ## Host server
 
-`src/server.js` exposes the HTTP API, static UI, and session lifecycle routes. It uses the Docker CLI to create, inspect, list, and stop session containers, so the MVP has no runtime npm dependencies.
+`src/server.js` exposes the HTTP API, static UI, admin login, management routes, health routes, and session lifecycle routes. It uses the Docker CLI to create, inspect, list, and stop session containers, so the MVP has no runtime npm dependencies.
 
 ## Session container
 
@@ -17,6 +17,15 @@ Linux Container VM Access (LCVA) is designed as a small host service plus a reus
 - OpenSSH on `22` for terminal access.
 - xrdp on `3389` for direct RDP access.
 - Firefox ESR, Mousepad, XFCE Terminal, and a minimal desktop environment.
+
+## Management APIs
+
+- `/api/login`, `/api/logout`, and `/api/me` handle the admin login flow.
+- `/api/users` manages local users.
+- `/api/settings` stores service settings.
+- `/api/linux/stats` reports local host CPU, memory, disk, uptime, and active session stats.
+- `/api/app-health` and `/api/socket-health` report app and published socket health.
+- `/api/vms` aliases the session lifecycle using VM terminology for the UI.
 
 ## Session lifecycle
 

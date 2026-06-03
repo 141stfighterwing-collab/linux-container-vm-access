@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linux Container VM Access</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Linux-only disposable desktops</p>
+        <h1>Spin up a super-lite Linux workspace in a container.</h1>
+        <p>
+          Start a session, connect through browser VNC, or use the generated SSH/RDP endpoints for direct access.
+        </p>
+        <button id="start">Start Linux Desktop</button>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Sessions</h2>
+          <button id="refresh" class="secondary">Refresh</button>
+        </div>
+        <div id="sessions" class="sessions"></div>
+      </section>
+
+      <section class="viewer" hidden>
+        <div class="panel-header">
+          <h2>Browser VNC</h2>
+          <button id="close-viewer" class="secondary">Close viewer</button>
+        </div>
+        <iframe id="novnc" title="noVNC desktop"></iframe>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const rootDir = fileURLToPath(new URL('..', import.meta.url));
-const dataDir = join(rootDir, 'data');
+const dataDir = process.env.LCVA_DATA_DIR || join(rootDir, 'data');
 const usersPath = join(dataDir, 'users.json');
 const settingsPath = join(dataDir, 'settings.json');
 

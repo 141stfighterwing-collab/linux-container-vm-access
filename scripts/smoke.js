@@ -11,6 +11,11 @@ const requiredFiles = [
   'docs/ARCHITECTURE.md',
   'docs/SECURITY.md',
   'docs/ROADMAP.md',
+  'docs/VALIDATION.md',
+  'scripts/validate-api.sh',
+  'scripts/validate-container.sh',
+  'images/desktop/rootfs/xstartup',
+  'images/desktop/rootfs/xsession',
 ];
 
 for (const file of requiredFiles) {

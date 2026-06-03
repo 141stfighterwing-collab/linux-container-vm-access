@@ -8,8 +8,11 @@
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "build:image": "docker build -t lcva/desktop:latest images/desktop",
-    "lint": "node --check src/server.js && node --check src/docker.js && node --check src/auth.js && node --check src/health.js && node --check src/state.js && node --check scripts/smoke.js",
-    "smoke": "node scripts/smoke.js"
+    "lint": "node --check src/server.js && node --check src/docker.js && node --check src/auth.js && node --check src/health.js && node --check src/state.js && node --check scripts/smoke.js && bash -n scripts/validate-api.sh && bash -n scripts/validate-container.sh",
+    "smoke": "node scripts/smoke.js",
+    "validate:api": "scripts/validate-api.sh",
+    "validate:container": "scripts/validate-container.sh",
+    "validate": "npm run lint && npm run smoke && npm run validate:api && npm run validate:container"
   },
   "dependencies": {},
   "devDependencies": {},

@@ -28,6 +28,7 @@ A Linux-only, self-hosted starter repo for building a lightweight Kasm/Apache Gu
 cp .env.example .env
 npm install
 npm run build:image
+npm run validate
 npm start
 ```
 
@@ -54,8 +55,12 @@ Ephemeral desktop container
   `- OpenSSH :22
 ```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/MANAGEMENT.md](docs/MANAGEMENT.md), and [docs/ROADMAP.md](docs/ROADMAP.md) for implementation details and next steps.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/MANAGEMENT.md](docs/MANAGEMENT.md), [docs/VALIDATION.md](docs/VALIDATION.md), and [docs/ROADMAP.md](docs/ROADMAP.md) for implementation details, validation, and next steps.
 
 ## Security notes
 
 This is an MVP scaffold, not production-ready software. Before exposing it to the internet, add authentication, TLS, authorization, quotas, container hardening, secrets management, audit logs, and network isolation. See [docs/SECURITY.md](docs/SECURITY.md).
+
+## Validation
+
+Run `npm run validate` to execute syntax checks, smoke checks, API validation, and Docker container validation. Container validation builds and runs the desktop image when Docker is available; set `LCVA_REQUIRE_DOCKER=1` if missing Docker should fail CI.

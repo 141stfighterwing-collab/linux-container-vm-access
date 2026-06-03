@@ -12,7 +12,7 @@ Linux Container VM Access (LCVA) is designed as a small host service plus a reus
 
 `images/desktop/Dockerfile` builds a Debian XFCE container with:
 
-- TigerVNC on `5901` for the Linux desktop.
+- TigerVNC on `5901` for the Linux desktop with an XFCE startup script.
 - noVNC/websockify on `6080` for browser WebSocket access.
 - OpenSSH on `22` for terminal access.
 - xrdp on `3389` for direct RDP access.
@@ -24,7 +24,7 @@ Linux Container VM Access (LCVA) is designed as a small host service plus a reus
 - `/api/users` manages local users.
 - `/api/settings` stores service settings.
 - `/api/linux/stats` reports local host CPU, memory, disk, uptime, and active session stats.
-- `/api/app-health` and `/api/socket-health` report app and published socket health.
+- `/api/app-health` and `/api/socket-health` report app health and TCP-reachable published socket health.
 - `/api/vms` aliases the session lifecycle using VM terminology for the UI.
 
 ## Session lifecycle

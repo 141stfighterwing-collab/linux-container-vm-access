@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linux Container VM Access</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Linux-only disposable desktops</p>
+        <h1>Admin console for super-lite Linux workspaces.</h1>
+        <p>
+          Sign in, manage users, launch container-backed Linux desktops, monitor socket health, and watch local host stats while connected remotely.
+        </p>
+      </section>
+
+      <section id="login-panel" class="panel">
+        <h2>Admin login</h2>
+        <form id="login-form" class="form-grid">
+          <label>Username <input name="username" value="admin" autocomplete="username" /></label>
+          <label>Password <input name="password" type="password" autocomplete="current-password" /></label>
+          <button>Login</button>
+        </form>
+      </section>
+
+      <section id="console" hidden>
+        <nav class="tabs">
+          <button data-tab="dashboard">Dashboard</button>
+          <button data-tab="vms">VM Management</button>
+          <button data-tab="linux">Linux Management</button>
+          <button data-tab="users">Users</button>
+          <button data-tab="settings">Settings</button>
+          <button id="logout" class="secondary">Logout</button>
+        </nav>
+
+        <section data-panel="dashboard" class="panel stack">
+          <div class="panel-header"><h2>App + socket health</h2><button id="refresh-health" class="secondary">Refresh</button></div>
+          <div id="health-cards" class="card-grid"></div>
+        </section>
+
+        <section data-panel="vms" class="panel stack" hidden>
+          <div class="panel-header"><h2>VM Management</h2><button id="start">Start Linux Desktop</button></div>
+          <div id="sessions" class="sessions"></div>
+        </section>
+
+        <section data-panel="linux" class="panel stack" hidden>
+          <div class="panel-header"><h2>Linux Management</h2><button id="refresh-stats" class="secondary">Refresh stats</button></div>
+          <div id="host-stats" class="card-grid"></div>
+        </section>
+
+        <section data-panel="users" class="panel stack" hidden>
+          <div class="panel-header"><h2>User Management</h2></div>
+          <form id="user-form" class="form-grid">
+            <input name="username" placeholder="username" />
+            <input name="password" type="password" placeholder="password" />
+            <select name="role"><option>operator</option><option>admin</option><option>viewer</option></select>
+            <button>Add user</button>
+          </form>
+          <div id="users-list" class="sessions"></div>
+        </section>
+
+        <section data-panel="settings" class="panel stack" hidden>
+          <div class="panel-header"><h2>Settings</h2></div>
+          <form id="settings-form" class="form-grid settings-grid">
+            <label>Banner <input name="banner" /></label>
+            <label>Max sessions/user <input name="maxSessionsPerUser" type="number" min="1" /></label>
+            <label>Default TTL minutes <input name="defaultSessionTtlMinutes" type="number" min="5" /></label>
+            <label><input name="allowSsh" type="checkbox" /> Allow SSH</label>
+            <label><input name="allowRdp" type="checkbox" /> Allow RDP</label>
+            <button>Save settings</button>
+          </form>
+        </section>
+
+        <section class="viewer" hidden>
+          <div class="panel-header">
+            <h2>Browser VNC</h2>
+            <button id="close-viewer" class="secondary">Close viewer</button>
+          </div>
+          <div id="remote-stats" class="mini-stats"></div>
+          <iframe id="novnc" title="noVNC desktop"></iframe>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

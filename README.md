@@ -55,7 +55,7 @@ Ephemeral desktop container
   `- OpenSSH :22
 ```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/MANAGEMENT.md](docs/MANAGEMENT.md), [docs/VALIDATION.md](docs/VALIDATION.md), and [docs/ROADMAP.md](docs/ROADMAP.md) for implementation details, validation, and next steps.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/MANAGEMENT.md](docs/MANAGEMENT.md), [docs/VALIDATION.md](docs/VALIDATION.md), and the [six-month roadmap](docs/ROADMAP.md) for implementation details, validation, and next steps.
 
 ## Security notes
 
